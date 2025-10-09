@@ -93,7 +93,7 @@ export default function App() {
           <p className="text-3xl mb-5">Players </p><br /><br />
             <ol className="list-decimal list-inside">
               {state.players.map(p => {
-                return <li key={p.id}>{p.name} {state.bombHolder===p.id && "💣"}</li>
+                return <li key={p.id}>{p.name} {state.bombHolder===p.id && "💣" }</li>
               })}
             </ol>
         </div>
