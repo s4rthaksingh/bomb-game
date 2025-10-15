@@ -71,7 +71,6 @@ export default function App() {
       <>
       <div className="flex h-screen w-screen">
         <div className="flex flex-col justify-center items-center gap-10 w-7/10">
-          <h1>Bomb blasts in {state.remainingTime}</h1>
           <h2 className="text-2xl">{findPlayerNamebyID(state.bombHolder)} currently holds the bomb</h2>
           <h1>{state.bombHolder === socket.id && "💣"}</h1>
           {state.bombHolder === socket.id &&
