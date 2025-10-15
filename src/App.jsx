@@ -56,7 +56,7 @@ export default function App() {
   if (state && !state.gameActive && state.leader === socket.id)
     return (
       <div className="flex h-screen w-screen">
-      <div className="flex flex-col justify-center items-center h-screen w-screen gap-10">
+      <div className="flex flex-col justify-center items-center gap-10 w-7/10">
         <h1>You are the leader</h1>
         <button onClick={() => socket.emit("startGame")}>Start game</button>
       </div>
