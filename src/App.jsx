@@ -55,9 +55,20 @@ export default function App() {
 
   if (state && !state.gameActive && state.leader === socket.id)
     return (
+      <div className="flex h-screen w-screen">
       <div className="flex flex-col justify-center items-center h-screen w-screen gap-10">
         <h1>You are the leader</h1>
         <button onClick={() => socket.emit("startGame")}>Start game</button>
+      </div>
+
+      <div className="flex flex-col justify-center items-center">
+          <p className="text-3xl mb-5">Players </p><br /><br />
+            <ol className="list-decimal list-inside">
+              {state.players.map(p => {
+                return <li key={p.id}>{p.name} {state.bombHolder===p.id && "💣" }</li>
+              })}
+            </ol>
+        </div>
       </div>
     );
   else if (state && !state.gameActive) {
